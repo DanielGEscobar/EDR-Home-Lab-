@@ -33,7 +33,17 @@ This lab simulates a realistic attack and defense scenario using Metasploit for 
 Step 1: 
 Create the Environment Why: A controlled environment ensures safe experimentation.
 Steps:
-Install VirtualBox or VMware. Create a VM for Kali Linux (attacker machine). Create a VM for Windows 10 (target machine). Allocate at least 2GB RAM and 20GB storage. Install LimaCharlie agent on the Windows VM. Follow LimaCharlie’s agent installation guide. Skills Learned:
+Install VirtualBox or VMware. Create a VM for Kali Linux (attacker machine).
+![Screenshot 2024-11-29 080948](https://github.com/user-attachments/assets/04d0def3-687e-4d9e-a117-ee4ef306fe15)
+
+Create a VM for Windows 10 (target machine). Allocate at least 2GB RAM and 20GB storage.
+![Screenshot 2024-11-26 155738](https://github.com/user-attachments/assets/f3b44589-0c2f-4e9f-a273-960751090b43)
+
+Install LimaCharlie agent on the Windows VM. Follow LimaCharlie’s agent installation guide.
+![Screenshot 2024-11-26 155632](https://github.com/user-attachments/assets/6ca40403-2c66-476f-bd3d-b3fb901fad87)
+![Screenshot 2024-11-26 155448](https://github.com/user-attachments/assets/95f0711f-79bf-492e-86d3-ffda3265d7b5)
+
+Skills Learned:
 Setting up and managing virtual machines. Configuring an EDR agent on endpoints. Step 2: Configure LimaCharlie Why: To monitor the target system’s activities and test detections.
 Steps:
 Sign up for a free LimaCharlie account. Add the Windows VM as an endpoint. Create detection rules (e.g., for reverse shell or privilege escalation). Example Rule: yaml Copy code name: "Detect Reverse Shell" detection: queries: - evt.type == "new_process" and process.command_line contains "powershell.exe" response:
